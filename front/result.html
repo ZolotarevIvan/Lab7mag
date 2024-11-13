@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Результат</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Результат вычислений</h1>
+        <table>
+            <tr>
+                <th>Первое число</th>
+                <th>Второе число</th>
+                <th>Операция</th>
+                <th>Результат</th>
+            </tr>
+            <tr id="resultRow">
+                <td id="num1Result"></td>
+                <td id="num2Result"></td>
+                <td id="operationResult"></td>
+                <td id="calculationResult"></td>
+            </tr>
+        </table>
+        <img src="photo.jpg" alt="Моя фотография" class="photo">
+        <p>
+            <a href="index.html" class="link">Назад к исходной странице</a>
+        </p>
+    </div>
+
+    <script>
+        // Получаем данные из localStorage и отображаем их
+        window.onload = function() {
+            const num1 = localStorage.getItem("num1");
+            const num2 = localStorage.getItem("num2");
+            const operation = localStorage.getItem("operation");
+            const result = localStorage.getItem("result");
+
+            document.getElementById("num1Result").textContent = num1;
+            document.getElementById("num2Result").textContent = num2;
+            document.getElementById("operationResult").textContent = operation;
+            document.getElementById("calculationResult").textContent = result;
+        };
+    </script>
+</body>
+</html>
